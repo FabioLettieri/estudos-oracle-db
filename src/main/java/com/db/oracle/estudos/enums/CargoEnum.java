@@ -13,7 +13,10 @@ public enum CargoEnum {
 	DIRETOR("Diretor", 7),
 	CEO("Diretor Executivo", 8),
 	CFO("Diretor Financeiro", 9),
-	CTO("Diretor Tecnologia", 10);
+	CTO("Diretor Tecnologia", 10),
+	DESENVOLVEDOR("Desenvolvedor", 11)
+	;
+	
 
 	private String tipo;
 	private Integer codigo;

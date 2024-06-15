@@ -1,6 +1,7 @@
 package com.db.oracle.estudos.service;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class FuncionarioService {
 	
 	 private static final String GET_ALL_FUNCIONARIO = "getAllFuncionario()";
 	 private static final String CREATE_NEW_FUNCIONARIO = "createNewFuncionario()";
+	 private static final String CREATE_NEW_FUNCIONARIO_LIST = "createNewFuncionarioList()";
 	 private static final String CALCULO_IDADE = "calculoIdade()";
 
 	private static final Logger LOG = LoggerFactory.getLogger(FuncionarioController.class);
@@ -53,5 +55,19 @@ public class FuncionarioService {
 		LOG.info("FINISH - " + CALCULO_IDADE + " - " + new Date() + " " + response);
 		
 		return response;
+	}
+	
+	public List<FuncionarioDTO> createNewFuncionarioList(List<FuncionarioDTO> dtos) {
+		LOG.info("START - " + CREATE_NEW_FUNCIONARIO_LIST + " - " + new Date());
+		List<FuncionarioDTO> listDTOs = new ArrayList<FuncionarioDTO>();
+		dtos.stream()
+			.forEach(dto -> {
+				listDTOs.add(createNewFuncionario(dto));
+			}
+		);
+		
+		LOG.info("FINISH - " + CREATE_NEW_FUNCIONARIO_LIST + " - " + new Date() + " " + listDTOs);
+		
+		return listDTOs;
 	}
 }

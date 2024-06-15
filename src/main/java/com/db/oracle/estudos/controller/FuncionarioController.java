@@ -36,4 +36,9 @@ public class FuncionarioController {
 	public String calculoIdadeFuncionario(@RequestParam String dataNasc) throws ParseException {
 		return "Idade atual do Funcionario é: " + service.calculoIdade(DataUtils.stringToDateOtherFormat(dataNasc));
 	}
+	
+	@PostMapping("/create-by-list")
+	public List<FuncionarioDTO> createNewFuncionarioList(@RequestBody List<FuncionarioDTO> dtos) {
+		return service.createNewFuncionarioList(dtos);
+	}
 }
