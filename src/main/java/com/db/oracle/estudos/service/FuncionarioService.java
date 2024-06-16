@@ -38,7 +38,7 @@ public class FuncionarioService {
 
 	@Autowired
 	FuncionarioConverter converter;
-
+	
 	public ResponseEntity<List<FuncionarioDTO>> getAllFuncionario() {
 		LOG.info("START - " + GET_ALL_FUNCIONARIO + " - " + new Date());
 		List<Funcionario> listFuncionario = repository.findAll();
