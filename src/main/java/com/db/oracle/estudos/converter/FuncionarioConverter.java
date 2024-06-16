@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.db.oracle.estudos.dto.FuncionarioDTO;
 import com.db.oracle.estudos.entity.Funcionario;
+import com.db.oracle.estudos.entity.dto.FuncionarioDTO;
 import com.db.oracle.estudos.util.DataUtils;
 
 @Component
