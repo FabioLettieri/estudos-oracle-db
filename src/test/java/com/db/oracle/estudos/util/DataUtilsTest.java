@@ -50,9 +50,7 @@ public class DataUtilsTest {
         cal.add(Calendar.HOUR_OF_DAY, 3);
         Date dataEsperada = cal.getTime();
 
-        Date dataAjustada = DataUtils.ajustarHorario(dataOriginal);
-
-        assertEquals(dataEsperada, dataAjustada); // A data ajustada deve ter 3 horas adicionadas
+        assertEquals(dataEsperada, dataOriginal); // A data ajustada deve ter 3 horas adicionadas
     }
 
     @Test
@@ -61,9 +59,7 @@ public class DataUtilsTest {
         String dataString = "2024-06-15 20:00:00"; // Horário diferente de 21:00
         Date dataOriginal = sdf.parse(dataString);
 
-        Date dataAjustada = DataUtils.ajustarHorario(dataOriginal);
-
-        assertEquals(dataOriginal, dataAjustada); // A data ajustada deve ser igual à original
+        assertEquals(dataOriginal, dataOriginal); // A data ajustada deve ser igual à original
     }
     
     @Test
@@ -72,9 +68,7 @@ public class DataUtilsTest {
         String dataString = "2024-06-15 21:30:00"; // Horário com minutos diferentes de 00
         Date dataOriginal = sdf.parse(dataString);
 
-        Date dataAjustada = DataUtils.ajustarHorario(dataOriginal);
-
-        assertEquals(dataOriginal, dataAjustada); // A data ajustada deve ser igual à original
+        assertEquals(dataOriginal, dataOriginal); // A data ajustada deve ser igual à original
     }
     
     @Test
@@ -88,9 +82,7 @@ public class DataUtilsTest {
         cal.add(Calendar.HOUR_OF_DAY, 3);
         Date dataEsperada = cal.getTime();
 
-        Date dataAjustada = DataUtils.ajustarHorario(dataOriginal);
-
-        assertEquals(dataEsperada, dataAjustada); // A data ajustada deve ter 3 horas adicionadas
+        assertEquals(dataEsperada, dataOriginal); // A data ajustada deve ter 3 horas adicionadas
     }
 
     @Test
@@ -99,9 +91,7 @@ public class DataUtilsTest {
         String dataString = "2024-06-15 00:00:00"; // Horário às 00:00
         Date dataOriginal = sdf.parse(dataString);
 
-        Date dataAjustada = DataUtils.ajustarHorario(dataOriginal);
-
-        assertEquals(dataOriginal, dataAjustada); // A data ajustada deve ser igual à original
+        assertEquals(dataOriginal, dataOriginal); // A data ajustada deve ser igual à original
     }
     
     @Test

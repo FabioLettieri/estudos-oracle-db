@@ -28,6 +28,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Funcionario extends AbstractEntity {
 	
+	private static final long serialVersionUID = -1723074827044766668L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_func")
 	@SequenceGenerator(name = "id_func", sequenceName = "id_func", allocationSize = 1)
@@ -52,7 +54,7 @@ public class Funcionario extends AbstractEntity {
 	@Column(name = "PAIS", length = 25)
 	private String pais;
 	
-	@Column(name = "DATA_NASC")
+	@Column(name = "DATA_NASC", nullable = false)
 	private Date dataNascimento;
 	
 	@Enumerated(EnumType.STRING)

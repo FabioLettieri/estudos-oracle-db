@@ -1,5 +1,6 @@
 package com.db.oracle.estudos.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -10,7 +11,9 @@ import lombok.Data;
 
 @Data
 @MappedSuperclass
-public abstract class AbstractEntity {
+public abstract class AbstractEntity implements Serializable {
+
+	private static final long serialVersionUID = -100564688856439289L;
 
 	@Column(name = "CREATE_DATE", updatable = false)
 	private Date createDate;

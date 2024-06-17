@@ -71,6 +71,20 @@
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.1.Final</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

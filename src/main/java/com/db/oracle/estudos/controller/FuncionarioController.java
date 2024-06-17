@@ -3,6 +3,8 @@ package com.db.oracle.estudos.controller;
 import java.text.ParseException;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +43,7 @@ public class FuncionarioController {
 	 * @return O funcionário que foi salvo
 	 */
 	@PostMapping
-	public ResponseEntity<FuncionarioDTO> createNewFuncionario(@RequestBody FuncionarioDTO dto) {
+	public ResponseEntity<FuncionarioDTO> createNewFuncionario(@Valid @RequestBody FuncionarioDTO dto) {
 		return service.createNewFuncionario(dto);
 	}
 	
@@ -75,7 +77,7 @@ public class FuncionarioController {
 	 * @return O funcionário com as novas informações
 	 */
 	@PutMapping("/update-by-id")
-	public ResponseEntity<FuncionarioDTO> createNewFuncionarioList(@RequestParam Long id, @RequestBody FuncionarioDTO dto) {
+	public ResponseEntity<FuncionarioDTO> updateNewFuncionarioList(@RequestParam Long id, @RequestBody FuncionarioDTO dto) {
 		return service.updateFuncionario(id, dto);
 	}
 }

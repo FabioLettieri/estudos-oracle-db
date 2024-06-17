@@ -13,3 +13,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.OracleDialect
+
+jackson:
+  time-zone: America/Sao_Paulo

@@ -37,21 +37,6 @@ public class DataUtils {
 		return response;
 	}
 	
-	public static Date ajustarHorario(Date data) {
-		LOG.info("START - " + AJUSTAR_HORARIO + " - " + new Date());
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(data);
-        
-        if (cal.get(Calendar.HOUR_OF_DAY) == 21 && cal.get(Calendar.MINUTE) == 0) {
-            cal.add(Calendar.HOUR_OF_DAY, 3);
-        }
-        
-        Date response = cal.getTime();
-        LOG.info("FINISH - " + AJUSTAR_HORARIO + " - " + new Date() + " " + response);
-        
-        return response;
-    }
-	
 	public static Integer calculoIdade(Date dataNascimento) {
 		LOG.info("START - " + CALCULO_IDADE + " - " + new Date());
 	    Calendar dataNasc = Calendar.getInstance();

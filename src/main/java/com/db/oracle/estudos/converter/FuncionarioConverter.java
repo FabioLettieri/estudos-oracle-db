@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import com.db.oracle.estudos.entity.Funcionario;
 import com.db.oracle.estudos.entity.dto.FuncionarioDTO;
-import com.db.oracle.estudos.util.DataUtils;
 
 @Component
 public class FuncionarioConverter {
@@ -40,7 +39,7 @@ public class FuncionarioConverter {
 				.endereco(funcionario.getEndereco())
 				.cidade(funcionario.getCidade())
 				.pais(funcionario.getPais())
-				.dataNascimento(DataUtils.ajustarHorario(funcionario.getDataNascimento()))
+				.dataNascimento(funcionario.getDataNascimento())
 				.cargo(funcionario.getCargo())
 				.build();
 		return dto;
@@ -54,7 +53,7 @@ public class FuncionarioConverter {
 				.endereco(dto.getEndereco())
 				.cidade(dto.getCidade())
 				.pais(dto.getPais())
-				.dataNascimento(DataUtils.ajustarHorario(dto.getDataNascimento()))
+				.dataNascimento(dto.getDataNascimento())
 				.cargo(dto.getCargo())
 				.build();
 		return entity;
